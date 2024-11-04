@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>jQuery UI Droppable - Default functionality</title>
+  <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+<style>
+   #draggable1{
+       width:100px;
+       height:100px;
+       padding:0.5em;
+       float:left;
+       margin:22px 5px 10px 0;
+   }
+   #droppable1{
+       width:150px;
+       height:120px;
+       padding:0.5em;
+       float:left;
+       margin:10px;     
+  }
+</style>
+<script>
+   $(function(){
+       $("#draggable1").draggable();
+       $("#droppable1").droppable();
+   });
+</script>
+</head>
+<body>
+  <div id="draggable1" class="ui-widget-content">
+     <p>Drag me to Javatpoint</p>
+  </div>
+  <div id="droppable1" class="ui-widget-content">
+      <p>Welcome to Javatpoint</p>
+  </div>
+</body>
+</html>
+
+  
+ 

@@ -1,0 +1,94 @@
+<html lang="en">  
+<head> 
+ <meta charset="utf-8">  
+ <title>jQuery UI Menu functionality</title>  
+ <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+ <script src="http://code.jquery.com/jquery-1.10.2.js"> </script>  
+ <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"> </script> 
+ <script>  
+    $(function() {  
+      $("#menu-1").menu();
+  
+      $("#menu-2").menu({
+         icons:{submenu:"ui-icon-circle-triangle-e"},
+         position:{my:"right top", at:"right-10 top+5"}
+      });
+
+      var menu=$("#menu-4").menu();
+      $("#menu-4").menu("focus",null,$("#menu-4").menu().find(".ui-menu-item:last"));
+      $(menu).mouseleave(function(){
+        menu.menu('collapseAll');
+      });
+    });
+ </script>  
+ <style>
+   .ui-menu{
+       width:200px;
+   }
+ </style>
+</head> 
+<body>
+   <ul id="menu-1">
+       <li><a href="#"> C </a></li>
+       <li><a href="#"> C++ </a></li>
+       <li><a href="#"> .NET</a>
+        <ul>
+           <li><a href="#"> ASP.NET</a></li>
+           <li><a href="#"> C#.NET </a></li>
+           <li><a href="#"> VB.NET</a></li>
+           <li><a href="#"> MVC </a></li>
+         </ul>
+       </li>
+       <li><a href="#"> Java </a>
+         <ul>
+           <li><a href="#"> Core Java </a></li>
+           <li><a href="#"> J2EE </a></li>
+           <li><a href="#"> Spring </a></li>
+           <li><a href="#"> Hibernate </a></li>
+           <li><a href="#"> Struts </a></li>
+         </ul>
+       </li>
+       <li><a href="#"> JSF </a></li>
+       <li><a href="#"> HTML5 </a></li>
+   </ul>
+  <br><br>
+  <ul id="menu-2">
+       <li><a href="#"> C </a></li>
+       <li><a href="#"> C++ </a></li>
+       <li><a href="#"> Java </a>
+         <ul>
+           <li><a href="#"> Core Java </a></li>
+           <li><a href="#"> J2EE </a></li>
+           <li><a href="#"> Spring </a></li>
+           <li><a href="#"> Hibernate </a></li>
+           <li><a href="#"> Struts </a></li>
+         </ul>
+       </li>
+       <li><a href="#"> JSF </a></li>
+       <li><a href="#"> HTML5 </a></li>
+   </ul>
+  <br><br>
+  <ul id="menu-4">
+       <li><a href="#"> C </a></li>
+       <li><a href="#"> C++ </a></li>
+       <li><a href="#"> .NET</a>
+        <ul>
+           <li><a href="#"> ASP.NET</a></li>
+           <li><a href="#"> C#.NET </a></li>
+           <li><a href="#"> VB.NET</a></li>
+           <li><a href="#"> MVC </a></li>
+         </ul>
+       </li>
+       <li><a href="#"> HTML5 </a></li>
+       <li><a href="#"> Java </a>
+         <ul>
+           <li><a href="#"> Core Java </a></li>
+           <li><a href="#"> J2EE </a></li>
+           <li><a href="#"> Spring </a></li>
+           <li><a href="#"> Hibernate </a></li>
+           <li><a href="#"> Struts </a></li>
+         </ul>
+       </li>      
+   </ul>
+</body>
+</html> 

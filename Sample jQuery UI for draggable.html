@@ -1,0 +1,83 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+
+<style>
+   #draggable{
+       width:100px;
+       height:100px;
+       padding:0.5em;
+       background:#7fffd4;
+   }
+</style> 
+<script>  
+  $(function(){
+     $("#draggable").draggable();
+  }); 
+</script> 
+</head>  
+<body>  
+<div id="draggable" class="ui-widget-content">
+  <p>I am draggable!!!</p>
+</div>
+
+<div id="div1" style="border:solid 1px;background-color:pink;">
+  <span>I am not movable</span><br><br>
+</div>
+<div id="div2" style="border:solid 1px;background-color:green;">
+  <span>Dragging will start only after you drag me 50px</span>
+   <br><br>
+</div>
+<div id="div3" style="border:solid 1px;background-color:lightyellow;">
+  <span>Wait for 200ms before dragging</span>
+   <br><br>
+</div><br><br>
+<div id="div4" style="border:solid 1px;background-color:lightblue; height:30px;">
+   <span> You can duplicate me....</span>
+</div> <br><br>
+<div id="div5" style="border:solid 1px;background:lightpink; height:30px;">  
+      <span>Click on me to see cursor type.</span>  
+</div>  <br><br>
+<div id="div6" style="border:solid 1px;background:lightgreen;">  
+      <span>Dragging disabled</span>  <br><br>
+</div>  
+<div id="div7" style="border:solid 1px;background:olive;">  
+      <span>Dragging enabled</span>  <br><br>
+</div>  <br><br>
+
+<script>
+
+   $("#div1 span").draggable({
+       disabled: true
+   });
+   $("#div2 span").draggable({
+       distance: 50
+   });
+   $("#div3 span").draggable({
+       distance: 200
+   });
+
+   $("#div4 span").draggable({
+       helper: "clone"
+   });  
+   /* First make the item draggable */  
+   $("#div5 span").draggable();  
+   
+   $("#div5 span").bind('click', function( event ){  
+      var cursor = $( "#div5 span" ).draggable( "option", "cursor" );  
+      var cursorAt = $( "#div5 span" ).draggable( "option", "cursorAt" );  
+      alert("Cursor type - " + cursor + ", cursorAt - " + cursorAt);  
+   });  
+ 
+  $("#div6 span").draggable();
+  $("#div6 span").draggable("disable");
+  $("#div7 span").draggable();
+  $("#div7 span").draggable("enable");
+
+   
+</script>
+</body>  
+</html>  
