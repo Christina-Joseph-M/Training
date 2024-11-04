@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Enquiry Form Using Class</title>
+<script type="text/javascript">
+class Enquiry{
+   constructor() {
+    var name;
+    var address;
+    var place;
+    var mob;
+    var qualification;
+   }
+   getName(){ 
+     return this.name; 
+   }
+   setName(name){ 
+    this.name = name;
+   }
+   getAddress(){ 
+     return this.address; 
+   }
+   setAddress(address){ 
+    this.address = address;
+   }
+   getPlace(){ 
+     return this.place; 
+   }
+   setPlace(place){ 
+    this.place = place;
+   }
+   getMobileNo(){ 
+     return this.mob; 
+   }
+   setMobileNo(mob){ 
+    this.mob = mob;
+   }
+   getQualification(){ 
+     return this.qualification; 
+   }
+   setQualification(qualification){ 
+    this.qualification = qualification;
+   }
+   Equiry(n,a,p,m,q){
+    setName(n);
+    setAddress(a);
+    setPlace(p);
+    setMobileNo(m);
+    setQualification(q);
+   }
+
+   printForm(){    
+       document.write("Employee Details");   
+   }
+}
+
+function submit() {
+
+    var n = document.getElementById("txtName").value;
+    var a = document.getElementById("txtAddress").value;
+    var p = document.getElementById("txtPlace").value;
+    var m = document.getElementById("txtMob").value;
+    var q = document.getElementById("txtQualification").value;
+
+    var pr = new Print();
+    var dis= new Display (n,a,p,m,q);
+
+    pr.printEmployeeInfo(dis);
+  //dis.printForm();
+}
+class Display extends Enquiry{
+
+    constructor(name,address,place,mob,qualification){
+      super();
+       this.name = name;
+       this.address = address;
+       this.place = place;
+       this.mob = mob;
+       this.qualification = qualification;
+     }
+   printForm(){   
+       document.write("Employee Details : <br><br>");
+       document.write("Name : " + this.name + "<br>");
+       document.write("Address : " + this.address + "<br>");
+       document.write("Place : " + this.place + "<br>");
+       document.write("Mobile No : " + this.mob + "<br>");
+       document.write("Qualification : " + this.qualification + "<br>");
+  } 
+}
+class Print{
+   printEmployeeInfo(e){
+    e.printForm();
+  } 
+}
+</script>
+</head>
+<body>
+<p align="center">Enquiry Form</p>
+
+<table border="1" cellspacing="0" width="500" height="500" cellpadding="5" align="center">
+
+<tr>
+  <td> Name </td> 
+  <td> <input type="text" id="txtName"> </td>
+</tr>
+<tr>
+   <td> Address </td> 
+   <td>  <input type="textarea" id="txtAddress" rows="4" cols="50"></td></tr>
+<tr>
+   <td> Place </td>
+   <td> <input type="text" id="txtPlace"> </td></tr>
+<tr>
+   <td> Mob.No </td>
+   <td>  <input type="Number" id="txtMob"></td></tr>
+<tr>
+   <td> Qualification </td>
+   <td> <input type="text" id="txtQualification"> </td>
+</tr>
+<tr>
+  <td><input type="button" id="btnSubmit" value ="Submit"  onClick="return submit();"></td><td></td>
+</tr>
+</table>
+</body>
+</html>

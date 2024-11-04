@@ -1,0 +1,78 @@
+<html>
+<head>
+ <title>Welcome to Personal Details</title>
+
+<script type="text/javascript">
+
+function formvalidation() {
+
+var fname = document.myform.txtFirstName.value;
+
+var lname = document.myform.txtLastName.value;
+
+var mob = document.myform.txtMobNumber.value;
+
+var email = document.myform.txtEmail.value;
+var atposition = email.indexOf("@");
+var dotposition = email.lastIndexOf(".");
+
+if(fname == null || fname == ""){ 
+ alert("Please enter First name");
+ return false;
+} 
+else if(lname == null || lname ==""){ 
+ alert("Please enter Last name");
+ return false;
+}
+else if(isNaN(mob)){
+ alert("Please enter a valid Phone number");
+ return false;
+}
+else if(atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= email.length){
+ alert("Please enter a valid email address");
+ return false;
+} 
+else {
+document.write("Personal Details <br>");
+document.write("<br>Name : " + fname.concat(' ' , lname));
+document.write("<br>Phone number : " + mob);
+document.write("<br>Email Address: " + email);
+return true;
+}
+}
+
+</script>
+
+</head>
+
+<body>
+<br>
+<p>Please enter the following information : <br>
+<form name="myform" method="post">
+<table border=0 cellspacing="3" cellpadding="3">
+<tr >
+ <td >First Name :</td>
+ <td ><input type="text" name="txtFirstName"  size=20></td>
+</tr>
+<tr >
+<td >Second Name :</td>
+<td ><input type="text" name="txtLastName"  size=20></td>
+</tr>
+<tr>
+ <td> Mobile Number: </td>
+ <td><input type="text" name="txtMobNumber"  size=20></td>
+</tr>
+<tr>
+ <td> Email: </td>
+ <td><input type="text" name="txtEmail"  size=20></td>
+</tr>
+<tr>
+<td align="center"><input type="submit" name="btnSubmit" value="Submit" onclick="return formvalidation()"></td>
+<td align="center">
+<input type="reset" name="btnReset" value="Reset" >
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

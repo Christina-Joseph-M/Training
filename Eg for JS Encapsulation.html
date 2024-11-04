@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Example for Encapsulation</title>
+<script type="text/javascript">
+
+class Student{
+
+  constructor(){
+    var name;
+    var marks;
+  }
+  getName(){
+    return this.name;
+  }
+  setName(name){
+    this.name= name;
+  }
+  getMarks(){
+    return this.marks;
+  }
+  setMarks(marks){
+    if(marks<0 || marks > 100) {
+      alert("Invalid Marks");
+    }
+    else{
+       this.marks = marks;
+    }
+  }
+}
+function submit() {
+debugger;
+  var stud = new Student();
+  stud.setName(document.getElementById("txtName").value);
+  stud.setMarks(document.getElementById("txtMark").value);
+  document.writeln(stud.getName() + "  " + stud.getMarks());
+}    
+</script>
+</head>
+<body>
+Student Name : <input type="text" id="txtName"><br><br>
+Mark : <input type="text" id="txtMark"> <br><br>
+<input type="button" id="btnSubmit" value ="Submit"  onClick="return submit();"> <br><br>
+
+</body>
+</html>

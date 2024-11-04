@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Multiplication table</title>
+<script type="text/javascript">
+
+function multiplicationTable(){
+ var Result ;
+//debugger;
+ var x = document.getElementById("txtNumber").value;
+ var y = document.getElementById("txtMaxNumber").value;
+// console.log(y);
+// console.log(Result);
+ document.write("Multiplication Table of " + x +  "<br>" );
+ for(var i=1;i<=y;i++)
+ {
+   Result  = i * x;
+   document.write(i + " * " + x + " = "  + Result  + "<br>");
+ }
+}
+</script>
+
+</head>
+<body>
+<br><br>
+ Please enter a number for multiplication : 
+ <input type="number" name="txtNumber" id="txtNumber" size="10"> <br> <br>
+ Please enter the maximum number :
+ <input type="number" name="txtMaxNumber" id="txtMaxNumber" size="10"> <br> <br>
+ <input type="button" name="btnGo" id="btnGo" value="Go" onClick="return multiplicationTable()">
+</body>
+
+</html>

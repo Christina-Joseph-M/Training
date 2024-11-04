@@ -1,0 +1,28 @@
+<html>
+<head><title>Find the occurance of 'is' in the given statement</title>
+<script type="text/javascript">
+function submit(){
+ 
+var str = document.getElementById("txtText").value;
+
+var count = 0;
+var pos = 0;
+
+while(pos != -1){
+  pos = str.indexOf(" is ",pos);
+  if(pos != -1){    
+    count = count+1;
+    pos = pos+1;
+  } 
+ }
+ alert("The number of occurance of the word 'is' in the given text is "  + count);
+}
+</script>
+</head>
+<body>
+<p>Please enter the text : </p>
+<input type="text" id="txtText" size="40">
+<input type="button" id="btnGo" value = "Go" onClick="return submit()">
+
+</body>
+</html>

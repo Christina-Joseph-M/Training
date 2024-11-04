@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Example for Polimorphism</title>
+<script type="text/javascript">
+
+class Shape{
+  constructor() {  
+     var width;
+     var height; 
+     var radius;     
+  } 
+     getWidth(){
+       return this.width;
+     }
+     setWidth(w){
+       this.width = w;
+     }
+     getHeight(){
+       return this.height;
+     }
+     setHeight(h){
+       this.height = h;
+     }
+     getRadius(){
+       return this.radius;
+     }
+     setRadius(r){
+       this.radius = r;
+     }
+     Shape(w,h) {
+       setWidth(w,h);
+       setHeight(w,h);
+     }
+     Shape(r){
+        setRadius(r);
+     }
+     area(){
+       document.write("Parent class : ");
+       return 0;
+     }
+}
+
+class Rectangle extends Shape {
+     constructor(width,height){
+      super();
+       this.width = width;
+       this.height = height;
+     }
+
+     area(){
+       document.write("<br> Rectangle ");        
+       return  (this.width * this.height);
+     }
+}
+
+class Triangle extends Shape {
+     constructor(width,height){
+      super();
+       this.width = width;
+       this.height = height;
+     }
+
+     area(){
+       document.write("<br> Triangle ");       
+       return (this.width * this.height) / 2;
+     }
+}
+
+class Circle extends Shape {
+     constructor(radius){
+      super();
+       this.radius = radius;
+     }
+
+     area(){
+       document.write("<br> Circle ");   
+       
+       return (2 * Math.PI * this.radius);
+     }
+}
+class Print {
+   printArea(s){
+     document.write("Area : " + s.area());
+  } 
+}
+
+function submit() {
+
+    var x = document.getElementById("txtWidth").value;
+    var y = document.getElementById("txtHeight").value;
+    var r = document.getElementById("txtRadius").value;
+
+    var p = new Print();
+    var rect = new Rectangle(x,y);
+    var tri = new Triangle(x,y);
+    var cir = new Circle(r);
+    p.printArea(rect);
+    p.printArea(tri);
+    p.printArea(cir);
+}
+</script>
+</head>
+<body>
+<p>Please enter the values </p><br>
+Width  : <input type="text" id="txtWidth"><br><br>
+Height : <input type="text" id="txtHeight"> <br><br>
+Radius : <input type="text" id="txtRadius"> <br><br>
+<input type="button" id="btnSubmit" value ="Submit"  onClick="return submit();"> <br><br>
+</body>
+</html>
